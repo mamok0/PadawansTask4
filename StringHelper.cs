@@ -8,8 +8,10 @@ namespace PadawansTask4
         public static int GetVowelCount(string str)
         {
             int vowelCount = 0;
-            if (String.IsNullOrEmpty(str))
+            if (str == "")
                 throw new ArgumentException();
+            if (str == null)
+                throw new ArgumentNullException();
             Regex vowels = new Regex(@"[aeiou]");
             MatchCollection matches = vowels.Matches(str);
             foreach(Match match in matches)
